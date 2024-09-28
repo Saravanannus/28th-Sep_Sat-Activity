@@ -1,6 +1,6 @@
 name: Terraform Destroy
 
-# on: workflow_dispatch
+on: workflow_dispatch
 
 env:            
   AWS_REGION: ap-southeast-1  
