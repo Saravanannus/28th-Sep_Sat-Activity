@@ -4,10 +4,6 @@ locals {
   name_prefix = lower("${split("/", "${data.aws_caller_identity.current.arn}")[1]}-httpapi")
 }
 
-# locals {
-#   name_prefix = "${split("/", "${data.aws_caller_identity.current.arn}")[1]}-httpapi"
-# }
-
 resource "aws_dynamodb_table" "table" {
   name         = "${local.name_prefix}-ddb"
   billing_mode = "PAY_PER_REQUEST"
