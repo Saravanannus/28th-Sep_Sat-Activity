@@ -194,16 +194,6 @@ module "acm" {
   zone_id           = data.aws_route53_zone.zone.zone_id
   validation_method = "DNS"
 }
-# # ACM module to create an SSL certificate for the custom domain
-# module "acm" {
-#   source  = "terraform-aws-modules/acm/aws"
-#   version = "~> 4.0"
-
-#   domain_name       = "${local.name_prefix}.sctp-sandbox.com"
-#   zone_id           = data.aws_route53_zone.zone.zone_id
-#   validation_method = "DNS"
-# }
-
 # Define the custom domain name for the API Gateway
 resource "aws_apigatewayv2_domain_name" "http-api" {
   domain_name = "${local.name_prefix}.sctp-sandbox.com"
